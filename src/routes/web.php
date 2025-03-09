@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\WeightController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +14,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::post('/register', [WeightController::class, 'register']);
+
+Route::middleware('auth')->group(function () {
+    Route::get('weight_log', [WeightController::class, 'index']);
 });
