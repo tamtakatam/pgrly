@@ -14,8 +14,6 @@ use App\Http\Controllers\WeightController;
 |
 */
 
-Route::post('/register', [WeightController::class, 'register']);
-
 Route::middleware('auth')->group(function () {
-    Route::get('weight_log', [WeightController::class, 'index']);
+    Route::get('weight-log', [WeightController::class, 'index']);
 });

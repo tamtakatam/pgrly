@@ -16,8 +16,5 @@ class WeightController extends Controller
         return view('weight-log', compact('weightLogs'));
     }
 
-    public function register()
-    {
-        return redirect('login');
-    }
+
 }
